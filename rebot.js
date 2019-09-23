@@ -8,19 +8,38 @@
 
 console.info("Starting....");
 autoToBottom("ghx-pool");
-autoRefresh(15);
+//autoRefresh(15);
 console.info("Ending....");
 
 
-function autoToBottom(key) {
+function autoToBottom(id) {
+    let add = 0;
     setInterval(function () {
-        var ele = document.getElementById(key);
-        let dy = (ele.scrollTop + 1) / 4; // 每次更新scrollTop改变的大小            
-        ele.scrollTop += 300;//Math.max(dy, 100);
-        setTimeout(() => {
-            autoToBottom(ele, dy);
-        }, 3000);
-    }, 5000);  // 1000为间隔时间，单位毫秒
+        let ele = document.getElementById(id);
+        let top = ele.scrollTop;
+        ele.scrollTop += 5;
+        if (top == ele.scrollTop) {
+            //console.info("reload");
+            // location.reload();
+            //setTimeout(function () {
+            //}, 2000)     
+            autoToTop("ghx-pool");
+        }
+
+    }, 500);  // 1000为间隔时间，单位毫秒
+}
+
+function autoToTop(id) {
+
+    setInterval(function () {
+        let ele = document.getElementById(id);
+        let top = ele.scrollTop;
+        ele.scrollTop -= 5;
+        if (top == 0) {
+            location.reload();
+        }
+
+    }, 500);
 }
 
 function autoRefresh(seconds) {
@@ -31,6 +50,7 @@ function autoRefresh(seconds) {
     }, seconds * 1000);
 
 }
+
 
 
 
