@@ -18,28 +18,27 @@ function autoToBottom(id) {
         let ele = document.getElementById(id);
         let top = ele.scrollTop;
         ele.scrollTop += 5;
-        if (top == ele.scrollTop) {
-            //console.info("reload");
-            // location.reload();
-            //setTimeout(function () {
-            //}, 2000)     
-            autoToTop("ghx-pool");
+        if (top == ele.scrollTop) {        
+          
+          	autoToTop("ghx-pool");
+          
+          
         }
 
     }, 500);  // 1000为间隔时间，单位毫秒
 }
 
-function autoToTop(id) {
+function autoToTop(id){
 
     setInterval(function () {
         let ele = document.getElementById(id);
         let top = ele.scrollTop;
         ele.scrollTop -= 5;
-        if (top == 0) {
+        if(top == 0){
             location.reload();
         }
 
-    }, 500);
+    },500);
 }
 
 function autoRefresh(seconds) {
