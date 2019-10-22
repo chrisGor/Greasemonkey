@@ -7,7 +7,7 @@
 // ==/UserScript==
 
 console.info("Starting....");
-autoToBottom("ghx-pool");
+autoToBottom("ghx-pool-column");
 //autoRefresh(15);
 console.info("Ending....");
 
@@ -20,7 +20,7 @@ function autoToBottom(id) {
         ele.scrollTop += 5;
         if (top == ele.scrollTop) {        
           
-          	autoToTop("ghx-pool");
+          	autoToTop("ghx-pool-column");
           
           
         }
