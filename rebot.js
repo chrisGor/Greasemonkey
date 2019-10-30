@@ -41,15 +41,6 @@ function autoToTop(id){
     },500);
 }
 
-function autoRefresh(seconds) {
-
-    setInterval(function () {
-        document.getElementById("ghx-pool").scrollTop = -999;
-        location.reload();
-    }, seconds * 1000);
-
-}
-
 
 
 
